@@ -6,7 +6,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      chart: meilisearch/meilisearch
+      chart: meilisearch
       version: '0.4.0'
       sourceRef:
         kind: HelmRepository
