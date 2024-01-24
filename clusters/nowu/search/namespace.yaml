@@ -4,3 +4,4 @@ metadata:
   name: search
   labels:
     app.kubernetes.io/component: search
+    istio-injection: enabled
