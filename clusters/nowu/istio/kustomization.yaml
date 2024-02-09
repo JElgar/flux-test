@@ -3,7 +3,11 @@ kind: Kustomization
 resources:
   - namespace-system.yaml
   - namespace-ingress.yaml
-  - repository.yaml
+  - repository-istio.yaml
   - release-base.yaml
   - release-istiod.yaml
   - release-gateway.yaml
+
+  - namespace-kiali.yaml
+  - repository-kiali.yaml
+  - release-kiali.yaml
