@@ -4,7 +4,9 @@ Testing of flux
 
 ```
 export GITHUB_TOKEN=
-minikube start
+minikube start --cpus 6 --memory 8192
+minikube addons enable ingress
+minikube addons enable metrics-server
 flux bootstrap github --owner=jelgar --repository=flux-test --path=clusters/nowu
 ```
 
@@ -27,3 +29,6 @@ TODO: Change this password
 username: admin
 password: admin
 
+## Enable ssl locally
+
+Generate a root certificate
