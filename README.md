@@ -10,6 +10,10 @@ minikube addons enable metrics-server
 flux bootstrap github --owner=jelgar --repository=flux-test --path=clusters/nowu
 ```
 
+```
+kubectl apply -f https://github.com/kubernetes-sigs/gateway-api/releases/download/v1.0.0/standard-install.yaml
+```
+
 ## Prometheus
 
 ```
