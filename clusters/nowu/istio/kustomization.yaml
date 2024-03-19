@@ -11,3 +11,5 @@ resources:
   - namespace-kiali.yaml
   - repository-kiali.yaml
   - release-kiali.yaml
+
+  - gateway.yaml
