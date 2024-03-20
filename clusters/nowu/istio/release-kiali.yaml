@@ -17,4 +17,23 @@ spec:
     cr:
       create: true
       namespace: istio-system
+      # https://github.com/kiali/kiali-operator/blob/v1.24/deploy/kiali/kiali_cr.yaml
+      spec:
+        istio_component_namespaces:
+          prometheus: monitoring
+          graphana: monitoring
+        external_services:
+          prometheus:
+            url: http://prometheus-kube-prometheus-prometheus.monitoring:9090/
+          istio:
+            root_namespace: istio-system
+            component_status:
+              enabled: true
+              components:
+              - app_label: istiod
+                is_core: true
+              - app_label: istio-ingressgateway
+                is_core: true
+                is_proxy: true
+                namespace: istio-ingress
 

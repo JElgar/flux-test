@@ -33,6 +33,14 @@ TODO: Change this password
 username: admin
 password: admin
 
+## Kiali
+
+kubectl -n istio-system create token kiali-service-account
+
 ## Enable ssl locally
 
 Generate a root certificate
+
+## Notes
+
+https://istio.io/latest/docs/setup/additional-setup/getting-started/
