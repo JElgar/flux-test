@@ -49,7 +49,7 @@ spec:
   - matches:
     - path:
         type: PathPrefix
-        value: /get
+        value: /
     backendRefs:
     - name: nginx
       port: 8080

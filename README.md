@@ -7,6 +7,8 @@ export GITHUB_TOKEN=
 minikube start --cpus 6 --memory 8192
 minikube addons enable ingress
 minikube addons enable metrics-server
+kubectl get crd gateways.gateway.networking.k8s.io &> /dev/null || \
+  { kubectl kustomize "github.com/kubernetes-sigs/gateway-api/config/crd?ref=444631bfe06f3bcca5d0eadf1857eac1d369421d" | kubectl apply -f -; }
 flux bootstrap github --owner=jelgar --repository=flux-test --path=clusters/nowu
 ```
 
