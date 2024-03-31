@@ -1,15 +1,17 @@
-# apiVersion: gateway.networking.k8s.io/v1beta1
-# kind: Gateway
-# metadata:
-#   name: gateway
-#   namespace: istio-ingress
-# spec:
-#   gatewayClassName: istio
-#   listeners:
-#   - name: default
-#     hostname: "*.now-u.com"
-#     port: 80
-#     protocol: HTTP
-#     allowedRoutes:
-#       namespaces:
-#         from: All
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: istio-gateway
+  namespace: istio-ingress
+spec:
+  # The selector matches the ingress gateway pod labels.
+  # If you installed Istio using Helm following the standard documentation, this would be "istio=ingress"
+  selector:
+    istio: istio=ingress
+  servers:
+  - port:
+      number: 80
+      name: http
+      protocol: HTTP
+    hosts:
+    - "istio.alpha.now-u.com"
